@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load socialaccount %}
+{% providers_media_js %}
+<head>
+    <meta charset="UTF-8">
+    <title>Api Project</title>
+    <!-- Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <p>Name : {{user}}</p>
+    <div class="d-flex justify-content-center">
+        <a href="{% provider_login_url 'facebook' method='oauth2' %}" class="btn btn-primary my-1 w-75"><span class="material-icons icon">facebook
+        </span>Log in with Facebook</a>
+    </div>
+</body>
+</html>
