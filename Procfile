@@ -1,1 +1,1 @@
-web: gunicorn <apiproject-app-name>.wsgi --log-file –
+web: gunicorn apiproject.wsgi --log-file –
