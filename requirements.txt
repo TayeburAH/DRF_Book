@@ -24,7 +24,6 @@ pycparser==2.20
 PyJWT
 python-dateutil==2.8.2
 python-magic==0.4.24
-python-magic-bin==0.4.14
 python3-openid==3.2.0
 pytz
 requests==2.26.0

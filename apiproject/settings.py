@@ -107,13 +107,10 @@ DATABASES = {
     }
 }
 
-
 import dj_database_url
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -164,9 +161,6 @@ MEDIA_URL = '/api_media/'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Heroku runs collectstatic and puts all static files here in staticfiles
-
-# point to static outside app directory
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -239,8 +233,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = os.environ['email']  # must have 'Less secure app access' turned on go to https://myaccount.google.com/u/1/security
-# EMAIL_HOST_PASSWORD = os.environ['pass']  # put these in Heroku without quotation
+# EMAIL_HOST_USER = os.environ['email']
+# EMAIL_HOST_PASSWORD = os.environ['pass']
 DEFAULT_FROM_EMAIL = 'no-reply<no_reply@domain.com>'
 
 # PasswordResetTokenGenerator()
@@ -275,7 +269,6 @@ REST_USE_JWT = True
 
 django_heroku.settings(locals())
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # CLOUDINARY_STORAGE = {
 #     'CLOUD_NAME': 'tayebur-cloud',
